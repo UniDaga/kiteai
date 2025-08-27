@@ -117,7 +117,7 @@ const baseHeaders = {
 const getWallet = (privateKey) => {
   try {
     const wallet = new ethers.Wallet(privateKey);
-    logger.info(Wallet created: ${wallet.address});
+    logger.info(`Wallet created: ${wallet.address}`);
     return wallet;
   } catch (error) {
     logger.error(Invalid private key: ${error.message});
