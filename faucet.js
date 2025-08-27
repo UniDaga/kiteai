@@ -18,7 +18,7 @@ const colors = {
 };
 
 const logger = {
-  wallet: (msg) => console.log(`${colors.yellow}[➤] ${msg}${colors.reset}`),
+  info: (msg) => console.log(`${colors.green}[✓] ${msg}${colors.reset}`),
   wallet: (msg) => console.log(${colors.yellow}[➤] ${msg}${colors.reset}),
   error: (msg) => console.log(${colors.red}[✗] ${msg}${colors.reset}),
   success: (msg) => console.log(${colors.green}[] ${msg}${colors.reset}),
