@@ -120,7 +120,7 @@ const getWallet = (privateKey) => {
     logger.info(`Wallet created: ${wallet.address}`);
     return wallet;
   } catch (error) {
-    logger.error(Invalid private key: ${error.message});
+    logger.error(`Invalid private key: ${error.message}`);
     return null;
   }
 };
