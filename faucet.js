@@ -52,7 +52,7 @@ const loadProxies = async () => {
         };
         
         if (parts.length >= 4) {
-          proxy.auth = ${parts[2]}:${parts[3]};
+          proxy.auth = `${parts[2]}:${parts[3]}`;
         }
         
         return proxy;
@@ -64,10 +64,10 @@ const loadProxies = async () => {
       return [];
     }
     
-    logger.success(Loaded ${proxies.length} proxies from proxy.txt);
+    logger.success(`Loaded ${proxies.length} proxies from proxy.txt`);
     return proxies;
   } catch (error) {
-    logger.error(Failed to load proxy.txt: ${error.message});
+    logger.error(`Failed to load proxy.txt: ${error.message}`);
     return [];
   }
 };
@@ -86,23 +86,21 @@ const createAxiosInstance = (proxyConfig) => {
 
     let proxyUrl;
     if (proxyConfig.auth) {
-      proxyUrl = http://${proxyConfig.auth}@${proxyConfig.host}:${proxyConfig.port};
+      proxyUrl = `http://${proxyConfig.auth}@${proxyConfig.host}:${proxyConfig.port}`;
     } else {
-      proxyUrl = http://${proxyConfig.host}:${proxyConfig.port};
+      proxyUrl = `http://${proxyConfig.host}:${proxyConfig.port}`;
     }
 
-    const agent = new HttpsProxyAgent(proxyUrl);
-    
     return axios.create({
-      httpsAgent: agent,
       timeout: 30000,
-      proxy: false
+      proxy: false,
+      httpsAgent: new HttpsProxyAgent(proxyUrl),
     });
   } catch (error) {
-    logger.error(Failed to create proxy agent: ${error.message});
+    logger.error(`Failed to create Axios instance: ${error.message}`);
     return axios.create({ timeout: 30000 });
   }
-};
+}; 
 
 const baseHeaders = {
   'Accept': 'application/json, text/plain, */*',
