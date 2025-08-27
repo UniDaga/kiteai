@@ -22,7 +22,7 @@ const logger = {
   wallet: (msg) => console.log(`${colors.yellow}[➤] ${msg}${colors.reset}`),
   error: (msg) => console.log(`${colors.red}[✗] ${msg}${colors.reset}`),
   success: (msg) => console.log(`${colors.green}[✔] ${msg}${colors.reset}`),
-  loading: (msg) => console.log(${colors.cyan}[⟳] ${msg}${colors.reset}),
+  loading: (msg) => console.log(`${colors.cyan}[⟳] ${msg}${colors.reset}`),,
   step: (msg) => console.log(${colors.white}[➤] ${msg}${colors.reset}),
   banner: () => {
     console.log(${colors.cyan}${colors.bold});
