@@ -1,4 +1,4 @@
-Ko Myat Noe Oo 🐾, [8/27/2025 9:16 PM]
+
 require('dotenv').config();
 const axios = require('axios');
 const { ethers } = require('ethers');
@@ -126,7 +126,7 @@ const getWallet = (privateKey) => {
   }
 };
 
-Ko Myat Noe Oo 🐾, [8/27/2025 9:16 PM]
+
 const encryptAddress = (address) => {
   try {
     const keyHex = '6a1c35292b7c5b769ff47d89a17e7bc4f0adfe1b462981d28e0e9f7ff20b8f8a';
@@ -329,7 +329,7 @@ const login = async (wallet, neo_session = null, refresh_token = null, maxRetrie
       const { access_token, aa_address, displayed_name, avatar_url } = response.data.data;
       const cookieHeader = extractCookies(response.headers);
 
-Ko Myat Noe Oo 🐾, [8/27/2025 9:16 PM]
+
 let resolved_aa_address = aa_address;
       if (!resolved_aa_address) {
         const profile = await getUserProfile(access_token);
@@ -439,7 +439,7 @@ const dailyRun = async () => {
     const { access_token, aa_address, displayed_name, cookieHeader } = loginData;
     if (!aa_address) continue;
 
-Ko Myat Noe Oo 🐾, [8/27/2025 9:16 PM]
+
 const profile = await getUserProfile(access_token);
     
     if (profile) {
