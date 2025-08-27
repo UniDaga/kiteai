@@ -235,7 +235,7 @@ const solveRecaptcha = async (url, apiKey, maxRetries = 3) => {
   return null;
 };
 
-Ko Myat Noe Oo 🐾, [8/27/2025 9:16 PM]
+
 const claimDailyFaucet = async (access_token, cookieHeader) => {
   try {
     let apiKey;
