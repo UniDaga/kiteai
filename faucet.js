@@ -140,7 +140,7 @@ const encryptAddress = (address) => {
     const result = Buffer.concat([iv, encrypted, authTag]);
     return result.toString('hex');
   } catch (error) {
-    logger.error(Auth token generation failed for ${address});
+    logger.error(`Auth token generation failed for ${address}`);
     return null;
   }
 };
